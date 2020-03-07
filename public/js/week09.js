@@ -3,7 +3,7 @@ function getJSON() {
   let num2 = document.getElementById('num2').value;
   let op = document.getElementById('op').value;
 
-  let url = "/math_service?num1=" + num1
+  let url = "/week09/team/math_service?num1=" + num1
     + "&num2=" + num2
     + "&operation=" + op;
 
