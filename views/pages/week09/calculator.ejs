@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <title>Postal Rate Information</title>
 </head>
 <body>
-  <% if (error) { %>
-  <p>An error has occurred</p>
-  <% } else { %>
-  <p>This will be implemented</p>
-  <% } %>
+  <div class="jumbotron text-center">
+    <h1>Price Calculation</h1>
+    <% if (error) { %>
+    <p>Something went wrong when processing the information that you gave.</p>
+    <% } else { %>
+    <div class="container text-left panel panel-default rounded">
+      <div class="panel-body">
+        <p><%= weight %>oz * $<%= rate.toFixed(2) %>/oz =
+          <strong>$<%= price.toFixed(2) %></strong></p>
+        <small><%= letter_type %></small>
+      </div>
+    </div>
+    <% } %>
+  </div>
 </body>
 </html>

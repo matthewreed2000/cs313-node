@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <title>Postal Rate Calculator</title>
 </head>
 <body>
-  <form action="calculator" method="GET">
-    Weight: <input type="number"><br>
-    <select>
-      <option value="ls">Letters (Stamped)</option>
-      <option value="lm">Letters (Metered)</option>
-      <option value="le">Large Envelopes (Flats)</option>
-      <option value="fcp">First-Class Package Service - Retail</option>
-    </select><br>
-    <button type="submit">Submit</button>
-  </form>
+  <div class="jumbotron">
+    <div class="container panel panel-default rounded">
+      <form class="panel-body" action="calculator" method="GET">
+        <div class="form-group">
+          <label for="weight">Weight (oz):</label>
+          <input class="form-control" type="number" name="weight" id="weight"
+            step="0.1" min="0">
+        </div>
+        <div class="form-group">
+          <label for="letter_type">Letter Type:</label>
+          <select class="form-control" name="letter_type" id="letter_type">
+            <option value="ls">Letters (Stamped)</option>
+            <option value="lm">Letters (Metered)</option>
+            <option value="le">Large Envelopes (Flats)</option>
+            <option value="pfc">First-Class Package Service - Retail</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
