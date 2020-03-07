@@ -1,10 +1,11 @@
 function run(req, res) {
-  if (req.query) {
-    res.render('pages/week09/calculator', {error:false});
+  returnObj = {error:true};
+
+  if (req.query.length > 0) {
+    returnObj.error = false;
   }
-  else {
-    res.render('pages/week09/calculator', {error: true});
-  }
+
+  res.render('pages/week09/calculator', returnObj);
 }
 
 module.exports = {run};
