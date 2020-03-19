@@ -48,4 +48,15 @@ app.get('/week09/prj/calculator', (req, res) => {
   week09obj.run(req, res);
 });
 
+
+// Week 10
+app.use('/week10/team', express.static('./controllers/week10/team/public'));
+app.get('/week10/team*', (req, res) => {
+  let newReq = req;
+  newReq.url = newReq.url.replace('/week10/team', '');
+
+  let week10obj = require('./controllers/week10/team');
+  week10obj.run(newReq, res);
+});
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
